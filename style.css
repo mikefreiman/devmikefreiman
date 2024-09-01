@@ -148,6 +148,8 @@ body {
 
 .header-cta {
     align-self: flex-end;
+    position: relative;
+    z-index: 500;
     a {
         display: inline-block;
         background-color: #42b0b0;
