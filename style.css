@@ -73,7 +73,7 @@ body {
   flex-flow: column;
   align-items: center;
   background-color: var(--page-bg-color);
-  width: min(100%, 1720px);
+  width: min(100%, 2000px);
   height: 100%;
   min-height: 100vh;
   box-shadow: 0px 0px 12px 6px var(--page-shadow-color);
@@ -253,7 +253,7 @@ body {
   }
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 2000px) {
   .app {
     padding: 2rem 0;
   }
