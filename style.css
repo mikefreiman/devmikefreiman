@@ -100,10 +100,11 @@ body {
 .container {
   width: min(98%, 900px);
   margin: 0 auto;
+  padding: 1rem;
 }
 
 .container.embelished {
-    padding: 2rem 0;
+    padding: 2rem 1rem;
     border-top: 1px solid var(--text-color);
     border-bottom: 1px solid var(--text-color);
 }
