@@ -179,7 +179,7 @@ body {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    background-color: #017e7e;
+    background-color: hsla(180, 98%, 25%, 0.75);
     border: 3px solid #2a9d9d;
     border-radius: 4px;
     padding: 0.55em 1.25em;
