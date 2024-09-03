@@ -26,6 +26,7 @@ a {
   --page-shadow-color: hsla(240, 21%, 85%, 0.35);
   --section-bg-color: hsl(0, 0%, 100%);
   --text-color: hsl(244, 63%, 18%);
+  --section-border:#8ff8f7;
   --punch-accent: #005959;
   --pink-accent: #ef96c1;
   --blue-accent: #77caf2;
@@ -39,6 +40,7 @@ a {
     --section-bg-color: hsl(245, 8%, 18%);
     --text-color: hsl(180, 3%, 93%);
     --punch-accent: #4ab7b6;
+    --section-border:#014141;
   }
 }
 
@@ -105,8 +107,8 @@ body {
 
 .container.embelished {
     padding: 2rem 1rem;
-    border-top: 1px solid var(--text-color);
-    border-bottom: 1px solid var(--text-color);
+    border-top: 1px solid var(--section-border);
+    border-bottom: 1px solid var(--section-border);
 }
 
 .first.section {
