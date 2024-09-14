@@ -26,7 +26,7 @@ a {
   --page-shadow-color: hsla(240, 21%, 85%, 0.35);
   --section-bg-color: hsl(0, 0%, 100%);
   --text-color: hsl(244, 63%, 18%);
-  --section-border:#ccc;
+  --section-border: #ccc;
   --punch-accent: #005959;
   --pink-accent: #ef96c1;
   --blue-accent: #77caf2;
@@ -40,7 +40,7 @@ a {
     --section-bg-color: hsl(245, 8%, 18%);
     --text-color: hsl(180, 3%, 93%);
     --punch-accent: #4ab7b6;
-    --section-border:#393939;
+    --section-border: #393939;
   }
 }
 
@@ -55,17 +55,15 @@ a {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100,
-    "GRAD" 0;
+  font-variation-settings: "wdth" 100, "GRAD" 0;
 }
 
 .slab {
-    font-family: "Roboto Slab", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-  }
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
 
 .fluid-type {
   font-size: clamp(2.5rem, -0.875rem + 8.333vw, 5rem);
@@ -80,6 +78,10 @@ a {
 
 body {
   background: var(--body-bg-color);
+}
+
+.white {
+  color: #fff;
 }
 
 .app {
@@ -106,13 +108,13 @@ body {
 }
 
 .container.embelished {
-    padding: 2rem 1rem;
-    border-top: 1px solid var(--section-border);
-    border-bottom: 1px solid var(--section-border);
+  padding: 2rem 1rem;
+  border-top: 1px solid var(--section-border);
+  border-bottom: 1px solid var(--section-border);
 }
 
 .first.section {
-    margin: 4rem 0 2rem 0;
+  margin: 4rem 0 2rem 0;
 }
 
 .section {
@@ -255,36 +257,85 @@ body {
 }
 
 h2 {
-    margin: 0 0 1em 0;
-    color: var(--punch-accent);
-    font-size: clamp(1.2rem, -0.875rem + 8.333vw, 1.66rem);
-    text-transform: uppercase;
-    font-weight: 500;
+  margin: 0 0 1em 0;
+  color: var(--punch-accent);
+  font-size: clamp(1.2rem, -0.875rem + 8.333vw, 1.66rem);
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 p {
-    margin: 0 0 1.66em 0;
-    font-size: clamp(0.8rem, -0.875rem + 8.333vw, 1.32rem);
-    max-width: 75ch;
-    line-height: 1.66em;
-    color: var(--text-color);
+  margin: 0 0 1.66em 0;
+  font-size: clamp(0.8rem, -0.875rem + 8.333vw, 1.32rem);
+  max-width: 75ch;
+  line-height: 1.66em;
+  color: var(--text-color);
 }
 
 .punch {
-    color: var(--punch-accent);
+  color: var(--punch-accent);
 }
 
 .em-punch {
-    font-style: normal;
-    display: block;
-    font-size: 0.8em;;
-    font-weight: 300;
+  font-style: normal;
+  display: block;
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+.small {
+  font-size: 0.57em;
+  text-transform: none;
+}
+
+.tool-small {
+  font-size: 0.9em;
 }
 
 p.quote {
-    font-size: clamp(2rem, -0.875rem + 8.333vw, 3rem);
-    max-width: 75ch;
-    line-height: 1.66em;
+  font-size: clamp(2rem, -0.875rem + 8.333vw, 3rem);
+  max-width: 75ch;
+  line-height: 1.66em;
+}
+
+.path-container {
+  padding: 2rem;
+  margin: 0.5rem 0;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1.5);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.path {
+  background-image: url(img/path-2000w.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: contrast(1.1);
+  opacity: 0.8;
+}
+
+.path-tools {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(76px, 1fr));
+  gap: 0.5rem;
+  place-items: center;
+}
+
+.path-tool-card {
+  padding: 1.5rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+  svg {
+    width: 48px;
+    height: auto;
+  }
 }
 
 @media (min-width: 768px) {
@@ -315,6 +366,22 @@ p.quote {
 
   .heading {
     line-height: 1em;
+  }
+  .path-container {
+    padding: 3rem;
+    margin: 3rem 0;
+    border-radius: 1rem;
+  }
+  .path-tools {
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    gap: 1rem;
+  }
+  .path-tool-card {
+    padding: 1.5rem;
+    svg {
+      width: 98px;
+      height: auto;
+    }
   }
 }
 
