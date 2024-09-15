@@ -342,6 +342,14 @@ p.quote {
     text-align: center;
 }
 
+.photo-credit {
+    display: block;
+    text-align: center;
+    a {
+        color: #4ab7b6;
+    }
+}
+
 @media (min-width: 560px) {
     .path-tool-card {
         padding: 1rem;
