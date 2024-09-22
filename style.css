@@ -27,6 +27,7 @@ a {
   --section-bg-color: hsl(0, 0%, 100%);
   --text-color: hsl(244, 63%, 18%);
   --section-border: #ccc;
+  --green-accent: #4ab7b6;
   --punch-accent: #005959;
   --pink-accent: #ef96c1;
   --blue-accent: #77caf2;
@@ -165,7 +166,7 @@ body {
   grid-column-start: 1;
   opacity: 0.9;
   background-color: transparent;
-  border: 2px solid #007171;
+  border: 2px solid var(--green-accent);
   border-left: 1px solid transparent;
   border-right: 1px solid transparent;
   border-radius: 100%;
@@ -179,9 +180,9 @@ body {
     grid-column-start: 1;
     opacity: 0.9;
     background-color: transparent;
-    border: 4px solid #4ab7b6;
-    border-left: 3px solid transparent;
-    border-right: 3px solid transparent;
+    border: 3px solid var(--green-accent);
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
     border-radius: 100%;
     animation: spinPulse 3s infinite ease-in-out;
   }
@@ -191,6 +192,9 @@ body {
   height: 2.75rem;
   grid-row-start: 1;
   grid-column-start: 1;
+  svg > path {
+    fill: var(--green-accent);
+  }
 }
 
 @keyframes spinPulse {
@@ -208,7 +212,7 @@ body {
 }
 
 .outline {
-  border: 4px solid #4ab7b6;
+  border: 4px solid var(--green-accent);
   grid-column: 2/4;
   grid-row: 3/5;
 }
