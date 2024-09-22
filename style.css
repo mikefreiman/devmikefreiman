@@ -432,7 +432,9 @@ p.quote {
 
 .photo-credit {
     display: block;
+    margin: 0 auto;
     text-align: center;
+    font-size: 14px;
 }
 
 .photo-credit a {
@@ -501,6 +503,10 @@ p.quote {
     .path-tool-card svg {
         width: calc(90% - 0.2rem);
         height: auto;
+    }
+
+    .photo-credit {
+        font-size: 16px;
     }
 }
 
