@@ -26,10 +26,10 @@ a {
     --page-bg-color: hsl(240, 20%, 98%);
     --page-shadow-color: hsla(240, 21%, 85%, 0.35);
     --section-bg-color: hsl(0, 0%, 100%);
-    --text-color: hsl(244, 63%, 18%);
+    --text-color: #2f2f2f;
     --section-border: #ccc;
     --green-accent: #4ab7b6;
-    --punch-accent: #973843;
+    --punch-accent: #9d3e49;
     --pink-accent: #ef96c1;
     --blue-accent: #77caf2;
 }
@@ -415,6 +415,10 @@ p.quote {
     flex-flow: column nowrap;
     align-items: center;
     width: 100%;
+}
+
+.path-tool-card h3 {
+    color: #fff;
 }
 
 .path-tool-card svg {
