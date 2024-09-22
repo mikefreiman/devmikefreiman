@@ -174,41 +174,56 @@ body {
 }
 
 .outer-circle {
-    width: 4rem;
-    height: 4rem;
-    grid-row-start: 1;
-    grid-column-start: 1;
-    opacity: 0.9;
-    background-color: transparent;
-    border: 3px solid var(--green-accent);
-    border-left: 2px solid transparent;
-    border-right: 2px solid transparent;
-    border-radius: 100%;
-    animation: spinPulse 3s infinite ease-in-out;
-  }
+  width: 4rem;
+  height: 4rem;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  opacity: 0.9;
+  background-color: transparent;
+  border: 3px solid var(--green-accent);
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-radius: 100%;
+  animation: spinPulse 3s infinite ease-in-out;
+}
 
 .mf-logo {
   width: 2.75rem;
   height: 2.75rem;
   grid-row-start: 1;
   grid-column-start: 1;
-  svg > path {
-    fill: var(--green-accent);
-  }
 }
 
 @keyframes spinPulse {
-    0% { transform:rotate(160deg); opacity:0; box-shadow:0 0 1px #5fcac9; }
-	50% { transform:rotate(145deg); opacity:1;}
-	100% { transform:rotate(-320deg); opacity:0; }
+  0% {
+    transform: rotate(160deg);
+    opacity: 0;
+    box-shadow: 0 0 1px #5fcac9;
+  }
+  50% {
+    transform: rotate(145deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-320deg);
+    opacity: 0;
+  }
 }
 @keyframes spinoffPulse {
-    0% { transform:rotate(0deg); }
-	100% { transform:rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 @keyframes rotatecircle {
-    0% { transform:rotate(0deg); }
-	100% { transform:rotate(-360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }
 
 .outline {
@@ -224,27 +239,27 @@ body {
   align-self: center;
   display: flex;
   flex-direction: column;
-  span {
-    display: block;
-    line-height: 1.3em;
-    font-size: 0.8em;
-    font-weight: 400;
-    color: #5fcac9;
-  }
-  em.skills {
-    display: block;
-    font-style: normal;
-    font-weight: 600;
-    color: #96fffe;
-    font-size: 1.4em;
-    line-height: 1.3em;
-  }
-  span.name {
-    font-size: 0.5em;
-    font-weight: 500;
-    color: #002020;
-    line-height: 1.3em;
-  }
+}
+.heading-block span {
+  display: block;
+  line-height: 1.3em;
+  font-size: 0.8em;
+  font-weight: 400;
+  color: #5fcac9;
+}
+.heading-block em.skills {
+  display: block;
+  font-style: normal;
+  font-weight: 600;
+  color: #96fffe;
+  font-size: 1.4em;
+  line-height: 1.3em;
+}
+.heading-block span.name {
+  font-size: 0.5em;
+  font-weight: 500;
+  color: #002020;
+  line-height: 1.3em;
 }
 
 .heading {
@@ -256,43 +271,46 @@ body {
   align-self: flex-end;
   position: relative;
   z-index: 500;
-  a {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    background-color: hsla(180, 98%, 25%, 0.75);
-    border: 3px solid #2a9d9d;
-    border-radius: 4px;
-    padding: 0.55em 1.25em;
-    margin: 0.6rem 0;
-    text-transform: uppercase;
-  }
-  .cta-text {
-    font-size: 1em;
-    font-style: normal;
-    color: #e2fffe;
-    font-weight: 600;
-    margin-left: 8px;
-  }
-  .cta-icon {
-    width: 18px;
-    height: 20px;
-  }
-  .cta-icon svg {
-    width: 18px;
-    height: auto;
-    stroke: #e2fffe;
-    align-self: center;
-  }
-  a:hover {
-    background-color: #e2fffe;
-    .cta-text {
-      color: #017e7e;
-    }
-    .cta-icon svg {
-      stroke: #017e7e;
-    }
-  }
+}
+
+.header-cta a {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  background-color: hsla(180, 98%, 25%, 0.75);
+  border: 3px solid #2a9d9d;
+  border-radius: 4px;
+  padding: 0.55em 1.25em;
+  margin: 0.6rem 0;
+  text-transform: uppercase;
+}
+.cta-text {
+  font-size: 1em;
+  font-style: normal;
+  color: #e2fffe;
+  font-weight: 600;
+  margin-left: 8px;
+}
+.cta-icon {
+  width: 18px;
+  height: 20px;
+}
+.cta-icon svg {
+  width: 18px;
+  height: auto;
+  stroke: #e2fffe;
+  align-self: center;
+}
+.header-cta a:hover {
+  background-color: #e2fffe;
+}
+
+.header-cta a:hover .cta-text {
+  color: #017e7e;
+}
+
+.header-cta a:hover .cta-icon svg {
+  stroke: #017e7e;
 }
 
 .self {
@@ -379,10 +397,11 @@ p.quote {
   flex-flow: column nowrap;
   align-items: center;
   width: 100%;
-  svg {
-    width: calc(142% - 0.2rem);
-    height: auto;
-  }
+}
+
+.path-tool-card svg {
+  width: calc(142% - 0.2rem);
+  height: auto;
 }
 
 .center-text {
@@ -392,17 +411,19 @@ p.quote {
 .photo-credit {
   display: block;
   text-align: center;
-  a {
-    color: #4ab7b6;
-  }
+}
+
+.photo-credit a {
+  color: #4ab7b6;
 }
 
 @media (min-width: 560px) {
   .path-tool-card {
     padding: 1rem;
-    svg {
-      width: calc(118% - 0.2rem);
-    }
+  }
+
+  .path-tool-card svg {
+    width: calc(118% - 0.2rem);
   }
 }
 
@@ -416,20 +437,20 @@ p.quote {
   }
   .heading-block {
     grid-column: 2/3;
-    span {
-      line-height: 1.3em;
-      font-size: 0.6em;
-      color: #42b0b0;
-    }
-    em.skills {
-      display: inline;
-      font-style: normal;
-      font-size: 1.1em;
-    }
-    span.name {
-      font-size: 0.3em;
-      color: #014141;
-    }
+  }
+  .heading-block span {
+    line-height: 1.3em;
+    font-size: 0.6em;
+    color: #42b0b0;
+  }
+  .heading-block em.skills {
+    display: inline;
+    font-style: normal;
+    font-size: 1.1em;
+  }
+  .heading-block span.name {
+    font-size: 0.3em;
+    color: #014141;
   }
 
   .heading {
@@ -445,10 +466,10 @@ p.quote {
   }
   .path-tool-card {
     padding: 1.5rem;
-    svg {
-      width: calc(90% - 0.2rem);
-      height: auto;
-    }
+  }
+  .path-tool-card svg {
+    width: calc(90% - 0.2rem);
+    height: auto;
   }
 }
 
