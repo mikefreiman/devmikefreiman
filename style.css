@@ -297,7 +297,7 @@ body {
 .cta-text {
     font-size: 1em;
     font-style: normal;
-    color: #e2fffe;
+    color: #fff;
     font-weight: 600;
     margin-left: 8px;
 }
@@ -310,7 +310,7 @@ body {
 .cta-icon svg {
     width: 18px;
     height: auto;
-    stroke: #e2fffe;
+    stroke: #fff;
     align-self: center;
 }
 
