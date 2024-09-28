@@ -202,10 +202,18 @@
                     </p>
                 </div>
             </section>
-            </section>
           </article>
         </main>
+        <footer class="footer">
+            <p class="sans-serif footer-info">&copy;<span class="sans-serif" id="year"></span> MIKE FREIMAN</p>
+        </footer>
       </div>
     </div>
+    <script>
+        const d = new Date();
+        let year = d.getFullYear();
+        document.getElementById("year").innerText = year;
+
+    </script>
   </body>
 </html>

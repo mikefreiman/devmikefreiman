@@ -26,7 +26,8 @@ a {
     --page-bg-color: hsl(240, 20%, 98%);
     --page-shadow-color: hsla(240, 21%, 85%, 0.35);
     --section-bg-color: hsl(0, 0%, 100%);
-    --text-color: #2f2f2f;
+    --text-color: hsl(0, 0%, 18%);
+    --footer-text: hsl(0, 0%, 45%);
     --section-border: #ccc;
     --green-accent: #4ab7b6;
     --punch-accent: hsl(180, 100%, 16%);
@@ -41,6 +42,7 @@ a {
         --page-shadow-color: hsla(248, 11%, 15%, 0.45);
         --section-bg-color: hsl(245, 8%, 18%);
         --text-color: hsl(180, 3%, 93%);
+        --footer-text: hsl(180, 3%, 55%);
         --punch-accent: hsl(180, 100%, 40%);
         --section-border: #393939;
     }
@@ -439,6 +441,19 @@ p.quote {
 
 .photo-credit a {
     color: #20dfdc;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 4rem 0;
+}
+
+.footer-info {
+    font-size: 0.9em;
+    color: var(--footer-text);
+
 }
 
 @media (min-width: 560px) {
