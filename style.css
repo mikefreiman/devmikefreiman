@@ -321,8 +321,8 @@ body {
   justify-content: center;
   background-color: #b8565f;
   border-radius: 4px;
-  width: calc(14.5rem - 3px);
-  height: calc(3.25rem - 4px);
+  width: calc(14.5rem - 0.3rem);
+  height: calc(3.25rem - 0.3rem);
   text-transform: uppercase;
 }
 
