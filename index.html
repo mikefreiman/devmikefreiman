@@ -35,6 +35,7 @@
       }
     </script>
     <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
   </head>
   <body>
     <div class="app">
@@ -107,7 +108,7 @@
         <main>
           <article>
             <section class="section">
-              <div class="container embelished">
+              <div class="container">
                 <h2 class="sans-serif strikethrough">About me</h2>
                 <p class="serif punch">
                   In a second, but first - sarcasm:<em
@@ -121,10 +122,19 @@
                         Regarding inspiration, I never look outside, nor look around me - I just stare at a wall. Walls, so inspirational; need I say more: Right?
                     </p>
                     <p class="serif">
-                        - Nobody, <cite>Ever</cite>
+                        -&nbsp;Nobody,&nbsp;<cite>Ever</cite>
                     </p>
                 </blockquote>
               </div>
+            </section>
+            <section class="wall">
+                <div class="container">
+                    <div class="wall-grid grid">
+                        <p class="lg-quote quote slab hidden">
+                            Detail of a painting of a guy staring at a wall.
+                        </p>
+                    </div>
+                </div>
             </section>
             <section class="section">
               <div class="container">
@@ -213,7 +223,6 @@
         const d = new Date();
         let year = d.getFullYear();
         document.getElementById("year").innerText = year;
-
     </script>
   </body>
 </html>

@@ -136,6 +136,17 @@ body {
   height: auto;
 }
 
+.hidden {
+    opacity: 0;
+    transform: translate(-5%, 10%);
+    transition: all 1s ease-in-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translate(0);
+}
+
 .header {
   grid-template-columns: 1rem 2fr 1fr 1rem;
   grid-template-rows: 1rem 1rem auto 1rem 2rem;
@@ -412,6 +423,20 @@ p.quote {
   max-width: 75ch;
   line-height: 1.66em;
 }
+
+.wall {
+    background-image: url(img/wall-2000.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: contrast(1.1);
+  }
+
+  .wall-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(500px, 1fr);
+    place-items: center;
+  }
 
 .path-container {
   padding: 2rem;
