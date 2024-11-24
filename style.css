@@ -249,16 +249,16 @@ body {
   place-items: center;
   background: conic-gradient(
     from var(--angle),
-    #eacccf,
+    #dbf1f0,
     #c6787f,
     #c6787f,
-    #d49a9f,
-    #eacccf
+    #3341ff,
+    #dbf1f0
   );
   animation: 3s spin linear infinite;
-  padding: 0.25rem;
+  padding: 0.0825rem;
   border-radius: 4px;
-  margin-top: 0.825rem;
+  margin-top: 0.925rem;
 }
 
 @keyframes spin {
@@ -274,7 +274,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #b8565f;
+  background-color: #255c5b;
   border-radius: 4px;
   width: calc(14.5rem - 0.3rem);
   height: calc(3.25rem - 0.3rem);
@@ -302,15 +302,15 @@ body {
 }
 
 .header-cta a:hover {
-  background-color: rgba(234, 204, 207, 0.4);
+  background-color: rgba(74, 183, 182, 0.4);
 }
 
 .header-cta a:hover .cta-text {
-  color: #5c2b30;
+  color: #0f2524;
 }
 
 .header-cta a:hover .cta-icon svg {
-  stroke: #5c2b30;
+  stroke: #0f2524;
 }
 
 .self {
