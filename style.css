@@ -149,16 +149,17 @@ body {
 
 .header {
   grid-template-columns: 1rem 2fr 1fr 1rem;
-  grid-template-rows: 1rem 1rem auto 1rem 2rem;
+  grid-template-rows: 0.6rem 1.3rem auto 1rem 2rem;
   width: 100%;
   background-color: #008b8b;
+  box-shadow: 0 0 2rem rgba(0, 28, 28, 0.3) inset;
 }
 
 .nav {
   position: relative;
   grid-column: 2/4;
-  grid-row-start: 1;
-  height: 4rem;
+  grid-row-start: 2;
+  height: 2.6rem;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -167,82 +168,26 @@ body {
 .logo-container {
   background-color: #008b8b;
   display: grid;
-  grid-template-columns: 4.75rem;
-  grid-template-rows: 4rem;
+  grid-template-columns: 2.6rem;
+  grid-template-rows: 2.6rem;
   place-items: center;
 }
 
-.inner-circle {
-  width: 3.35rem;
-  height: 3.35rem;
-  grid-row-start: 1;
-  grid-column-start: 1;
-  opacity: 0.9;
-  background-color: transparent;
-  border: 2px solid var(--green-accent);
-  border-left: 1px solid transparent;
-  border-right: 1px solid transparent;
-  border-radius: 100%;
-  animation: spinoffPulse 1s infinite linear;
-}
-
-.outer-circle {
-  width: 4rem;
-  height: 4rem;
-  grid-row-start: 1;
-  grid-column-start: 1;
-  opacity: 0.9;
-  background-color: transparent;
-  border: 3px solid var(--green-accent);
-  border-left: 2px solid transparent;
-  border-right: 2px solid transparent;
-  border-radius: 100%;
-  animation: spinPulse 3s infinite ease-in-out;
-}
-
 .mf-logo {
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 2.6rem;
+  height: 2.6rem;
   grid-row-start: 1;
   grid-column-start: 1;
 }
 
-@keyframes spinPulse {
-  0% {
-    transform: rotate(160deg);
-    opacity: 0;
-    box-shadow: 0 0 1px #5fcac9;
-  }
-
-  50% {
-    transform: rotate(145deg);
-    opacity: 1;
-  }
-
-  100% {
-    transform: rotate(-320deg);
-    opacity: 0;
-  }
+.mf-logo svg {
+  width: 2.6rem;
+  height: 2.6rem;
 }
 
-@keyframes spinoffPulse {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotatecircle {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(-360deg);
-  }
+.svg-shape {
+  width: 100%;
+  height: auto;
 }
 
 .outline {
@@ -314,7 +259,7 @@ body {
   animation: 3s spin linear infinite;
   padding: 0.25rem;
   border-radius: 4px;
-  margin-top: 0.6rem;
+  margin-top: 0.825rem;
 }
 
 @keyframes spin {
@@ -555,7 +500,8 @@ p.quote {
 @media (min-width: 768px) {
   .header {
     grid-template-columns: 2rem 2fr 1fr 2rem;
-    grid-template-rows: 1rem 2rem auto 5rem 6rem;
+    grid-template-rows: 1rem 1.3rem auto 5rem 6rem;
+    box-shadow: 0 0 4rem rgba(0, 28, 28, 0.6) inset;
   }
 
   .nav {
@@ -613,40 +559,38 @@ p.quote {
   .photo-credit {
     font-size: 16px;
   }
-
 }
 
 @media (min-width: 1024px) {
-    .wall-grid {
-      background-color: var(--body-bg-color);
-      padding: 0 2rem;
-      width: min(100%, 2000px);
-      margin: 0 auto;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 2rem 2rem auto auto 2rem 3rem;
-    }
-    
-    .wall-painting {
-      grid-column: 1;
-      grid-row: 2/5;
-    }
-    
-    .placard {
-      grid-column: 2;
-      grid-row: 2/5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .placard-card {
-      background-color: var(--page-bg-color);
-      width: min(100%, 500px);
-      padding: 3rem 3rem 4.4rem 3rem;
-      box-shadow: -4px 3px 6px 1px var(--page-shadow-color);
-      margin: 2rem 0;
-    }
-    
+  .wall-grid {
+    background-color: var(--body-bg-color);
+    padding: 0 2rem;
+    width: min(100%, 2000px);
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2rem 2rem auto auto 2rem 3rem;
+  }
+
+  .wall-painting {
+    grid-column: 1;
+    grid-row: 2/5;
+  }
+
+  .placard {
+    grid-column: 2;
+    grid-row: 2/5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .placard-card {
+    background-color: var(--page-bg-color);
+    width: min(100%, 500px);
+    padding: 3rem 3rem 4.4rem 3rem;
+    box-shadow: -4px 3px 6px 1px var(--page-shadow-color);
+    margin: 2rem 0;
+  }
 }
 
 @media (min-width: 2000px) {
