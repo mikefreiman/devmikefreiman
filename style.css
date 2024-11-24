@@ -166,7 +166,6 @@ body {
 }
 
 .logo-container {
-  background-color: #008b8b;
   display: grid;
   grid-template-columns: 2.6rem;
   grid-template-rows: 2.6rem;
