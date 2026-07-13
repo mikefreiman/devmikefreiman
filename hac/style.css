@@ -411,13 +411,13 @@ a {
   .hac-nav-grid {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 4rem 0fr;
+    grid-template-rows: 3.24rem 0fr;
     row-gap: 0;
     /* transition: all 184ms cubic-bezier(0.544, -0.02, 0.07, 0.84); */
   }
 
   .hac-nav-grid.show {
-    grid-template-rows: 4rem 1fr;
+    grid-template-rows: 3.24rem 1fr;
   }
 
   .hac-logo-navbar svg {
@@ -425,8 +425,8 @@ a {
   }
 
   #navicon svg {
-    height: 3.84rem;
-    width: 3.84rem;
+    height: 3rem;
+    width: 3rem;
   }
 
   .hac-hero-img {
