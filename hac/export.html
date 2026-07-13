@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Export Classes</title>
+    <style>
+      body {
+        font-family: system-ui, Arial;
+        padding: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      button {
+        padding: 8px 12px;
+      }
+      pre {
+        background: #f6f6f6;
+        padding: 10px;
+        max-height: 240px;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Export Classes</h1>
+    <label>
+      Date:
+      <input id="date" type="date" value="2026-05-17" />
+    </label>
+    <button id="export">Export</button>
+    <div id="status" style="margin-top: 12px"></div>
+    <h2>Preview (first 2k chars)</h2>
+    <pre id="preview">No data yet.</pre>
+
+    <script>
+      const statusEl = document.getElementById("status");
+      const previewEl = document.getElementById("preview");
+
+      document.getElementById("export").addEventListener("click", async () => {
+        statusEl.textContent = "Exporting...";
+        previewEl.textContent = "";
+        const date =
+          document.getElementById("date").value ||
+          new Date().toISOString().slice(0, 10);
+
+        try {
+          const res = await fetch("/export-classes", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ date }),
+          });
+
+          if (!res.ok) {
+            const txt = await res.text().catch(() => res.statusText);
+            throw new Error(res.status + " — " + txt);
+          }
+
+          const text = await res.text();
+          // show preview
+          previewEl.textContent = text.slice(0, 2000);
+          statusEl.textContent = "Success: downloaded JSON. Preparing file...";
+
+          // trigger file download
+          const blob = new Blob([text], { type: "application/json" });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = `classes-${date}.json`;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          URL.revokeObjectURL(url);
+
+          statusEl.textContent = "Done. File saved.";
+        } catch (err) {
+          statusEl.textContent = "Export failed: " + err.message;
+          previewEl.textContent = "";
+          console.error(err);
+        }
+      });
+    </script>
+  </body>
+</html>

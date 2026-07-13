@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Import & Display Classes</title>
+    <style>
+      body {
+        font-family: system-ui, Arial;
+        padding: 20px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 12px;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background: #f0f0f0;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Import & Display Classes</h1>
+    <input id="fileInput" type="file" accept="application/json" />
+    <div id="msg" style="margin-top: 8px"></div>
+
+    <div id="container" class="hidden">
+      <h2 id="title">Classes</h2>
+      <table id="table">
+        <thead>
+          <tr id="theadRow"></tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+
+    <script>
+      const fileInput = document.getElementById('fileInput');
+      const msg = document.getElementById('msg');
+      const container = document.getElementById('container');
+      const theadRow = document.getElementById('theadRow');
+      const tbody = document.getElementById('tbody');
+      const title = document.getElementById('title');
+
+      fileInput.addEventListener('change', async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        msg.textContent = 'Loading...';
+        container.classList.add('hidden');
+        try {
+          const text = await file.text();
+          const obj = JSON.parse(text);
+
+          // If the JSON has a wrapper (e.g., { data: [...] }) detect it:
+          let items = [];
+          if (Array.isArray(obj)) items = obj;
+          else if (Array.isArray(obj.data)) items = obj.data;
+          else {
+            // try to find the first array value
+            const firstArr = Object.values(obj).find(v => Array.isArray(v));
+            items = firstArr || [];
+          }
+
+          if (!items.length) {
+            msg.textContent = 'No class items found in the JSON.';
+            return;
+          }
+
+          // Choose table columns from keys of the first item (flatten simple nested fields)
+          const sample = items[0];
+          const columns = Object.keys(sample).map(k => {
+            // display nested simple objects as "parent.child"
+            if (sample[k] && typeof sample[k] === 'object' && !Array.isArray(sample[k])) {
+              return ...Object.keys(sample[k]).map(sub => k + '.' + sub);
+            }
+            return k;
+          }).flat();
+
+          // Render header
+          theadRow.innerHTML = '';
+          columns.forEach(col => {
+            const th = document.createElement('th');
+            th.textContent = col;
+            theadRow.appendChild(th);
+          });
+
+          // Render rows
+          tbody.innerHTML = '';
+          items.forEach(it => {
+            const tr = document.createElement('tr');
+            columns.forEach(col => {
+              const td = document.createElement('td');
+              if (col.includes('.')) {
+                const [p, s] = col.split('.');
+                td.textContent = it[p] && it[p][s] != null ? String(it[p][s]) : '';
+              } else {
+                const v = it[col];
+                td.textContent = v == null ? '' : (typeof v === 'object' ? JSON.stringify(v) : String(v));
+              }
+              tr.appendChild(td);
+            });
+            tbody.appendChild(tr);
+          });
+
+          title.textContent = `Classes (showing ${items.length} items)`;
+          container.classList.remove('hidden');
+          msg.textContent = `Loaded ${items.length} items from ${file.name}`;
+        } catch (err) {
+          console.error(err);
+          msg.textContent = 'Failed to load/parse JSON: ' + err.message;
+        }
+      });
+    </script>
+  </body>
+</html>
