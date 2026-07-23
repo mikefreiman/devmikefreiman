@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Harbor Athletic Club - Homepage</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="navbento.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -50,50 +51,76 @@
                 </button>
               </div>
               <nav class="hac-megamenu">
-                <div class="hac-mainmenu-grid">
-                  <div class="hac-mainmenu-header">
-                    <h2>Header Contextual Menu</h2>
-                  </div>
-                  <ul class="hac-mainmenu">
-                    <span>
-                      <li><a href="">link</a></li>
-                      <li><a href="">link</a></li>
-                      <li><a href="">link</a></li>
-                      <li><a href="">link</a></li>
-                    </span>
-                    <span>
-                      <li><a href="">link</a></li>
-                      <li><a href="">link</a></li>
-                      <li><a href="">link</a></li>
-                      <li><a href="">link</a></li>
-                    </span>
-                    <span>
-                      <li><a href="">link</a></li>
-                      <li><a href="">link</a></li>
-                      <li><a href="">link</a></li>
-                      <li><a href="">link</a></li>
-                    </span>
-                    <div class="hac-mainmenu-img">
-                      <picture>
-                        <source
+                <ul class="hac-mainmenu-grid">
+                  <li style="--grid-area: programs">
+                    <a href="#">
+                      <!-- <picture>
+                          <!-- <source
                           media="(max-width: 400px)"
                           srcset="./assets/family-swim-mobile.webp"
                         />
                         <source
                           media="(max-width: 500px)"
                           srcset="./assets/family-swim-tablet.webp"
-                        />
-                        <img
-                          src="./assets/family-swim.webp"
-                          alt="Even couples workout at Harbor Athletic"
-                        />
-                      </picture>
-                    </div>
-                  </ul>
-                  <div class="hac-mainmenu-footer">
-                    <h2>Footer Contextual Menu</h2>
-                  </div>
-                </div>
+                        /> -->
+                      <img
+                        class="programs"
+                        src="./assets/hac-guy-workingout.webp"
+                        alt="Classes at Harbor Athletic"
+                      />
+                      <!-- </picture> -->
+                    </a>
+                  </li>
+                  <li style="--grid-area: classes">
+                    <a href="#">
+                      <img
+                        src="./assets/hac-programs.webp"
+                        alt="Programs at Harbor Athletic"
+                      />
+                    </a>
+                  </li>
+                  <li style="--grid-area: swim">
+                    <a href="#">
+                      <img
+                        class="swim"
+                        src="./assets/hac-swim-lessons.webp"
+                        alt="Even couples workout at Harbor Athletic"
+                      />
+                    </a>
+                  </li>
+                  <li style="--grid-area: about">
+                    <a href="#" class="about">
+                      <h2>About</h2>
+                    </a>
+                  </li>
+                  <li style="--grid-area: wellness">
+                    <a href="#">
+                      <img
+                        class="wellness"
+                        src="./assets/wellness.webp"
+                        alt="Enjoy Yoga at our Wellness Center"
+                      />
+                    </a>
+                  </li>
+                  <li style="--grid-area: kids">
+                    <a href="#">
+                      <img
+                        class="kidsclub"
+                        src="./assets/kidsclub.webp"
+                        alt="We have a kids club for active parents"
+                      />
+                    </a>
+                  </li>
+                  <li style="--grid-area: canvas">
+                    <a href="#">
+                      <img
+                        class="canvas"
+                        src="./assets/canvasclub.webp"
+                        alt="Box"
+                      />
+                    </a>
+                  </li>
+                </ul>
               </nav>
             </div>
           </div>
