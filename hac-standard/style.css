@@ -101,7 +101,7 @@ nav.show ~ #overlay {
 
 .nav {
   position: fixed;
-  top: 4rem;
+  top: 3.5rem;
   right: -103%;
   height: 100%;
   width: min(425px, 100%);
@@ -169,6 +169,7 @@ nav.show ~ #overlay {
   }
   .nav {
     position: relative;
+    top: 4rem;
     width: 100%;
     justify-content: end;
     align-items: center;
