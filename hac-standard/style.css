@@ -45,7 +45,7 @@ body {
   position: relative;
   align-items: center;
   background-color: var(--brand-dk);
-  height: 4rem;
+  height: 3.5rem;
   width: 100%;
   padding: 0 6px;
 }
