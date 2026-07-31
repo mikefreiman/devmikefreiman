@@ -43,23 +43,12 @@ body {
 .navbar {
   display: flex;
   position: relative;
+  z-index: 100;
   align-items: center;
   background-color: var(--brand-dk);
   height: 3.5rem;
   width: 100%;
   padding: 0 6px;
-}
-
-#overlay {
-  background: rgba(0, 0, 0, 0.0444);
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  display: none;
-}
-
-nav.show ~ #overlay {
-  display: block;
 }
 
 .hac-logo {
@@ -86,7 +75,8 @@ nav.show ~ #overlay {
 }
 
 #navicon {
-  display: block;
+  display: flex;
+  align-items: center;
   background: none;
   border: none;
   cursor: pointer;
@@ -158,6 +148,14 @@ nav.show ~ #overlay {
 
 .nav a:hover.accent-link {
   background-color: var(--brand-hover);
+}
+
+.nav > #overlay {
+  display: none;
+}
+
+.nav.show > #overlay {
+  display: block;
 }
 
 @media (min-width: 1144px) {
