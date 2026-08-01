@@ -385,7 +385,7 @@ a {
   font-size: clamp(2.84rem, 3vw, 4rem);
   color: var(--white);
   line-height: 1.4em;
-  margin-left: var(--navfluid-pad-pad);
+  margin-left: var(--navfluid-pad);
 }
 
 .hac-hero-cta {
