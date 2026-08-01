@@ -29,12 +29,12 @@ function toggleMenu() {
 }
 toggleMenu();
 
-// function closeMenu() {
-//   overlay.addEventListener("click", function () {
-//     nav.classList.remove("show");
-//   });
-// }
-// closeMenu();
+function closeMenu() {
+  overlay.addEventListener("click", function () {
+    nav.classList.remove("show");
+  });
+}
+closeMenu();
 
 // function openSidebar() {
 //   navmenu.classList.add("show");
